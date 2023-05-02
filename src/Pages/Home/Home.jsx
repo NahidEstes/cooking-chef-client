@@ -1,9 +1,14 @@
 import React from "react";
+import Banner from "./Banner/Banner";
+import ContentCard from "./ContentCard/ContentCard";
+import Footer from "../../Layouts/Footer";
 
 const Home = () => {
   return (
     <div>
-      <h1>hi home</h1>
+      <Banner />
+      <ContentCard />
+      <Footer />
     </div>
   );
 };
