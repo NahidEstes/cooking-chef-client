@@ -6,7 +6,7 @@ const ContentCard = ({ cData }) => {
   return (
     <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow p-3">
       <a href="/" aria-label="Article">
-        <img src={profile_picture} className="rounded w-96 h-72 " alt="" />
+        <img src={profile_picture} className="rounded w-96 h-64" alt="" />
       </a>
       <div className="py-5">
         <a

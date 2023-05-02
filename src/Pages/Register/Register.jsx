@@ -109,11 +109,11 @@ const Register = () => {
             </div>
 
             <div>
-              <label>
-                <Link to="/login" className="btn-link">
+              <Link to="/login" className="btn-link">
+                <p className="underline text-blue-600">
                   Already have an account?
-                </Link>
-              </label>
+                </p>
+              </Link>
             </div>
 
             <div className="pt-5">
