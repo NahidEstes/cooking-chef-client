@@ -44,13 +44,20 @@ const Header = () => {
               </NavLink>
             </li>
           </ul>
-          {user && (
-            <Link to="login">
+          {user ? (
+            <button
+              onClick={logOutHandler}
+              className="px-3 py-2 bg-purple-500 font-bold text-white rounded"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link to="/login">
               <button
                 onClick={logOutHandler}
                 className="px-3 py-2 bg-purple-500 font-bold text-white rounded"
               >
-                Logout
+                Log In
               </button>
             </Link>
           )}
