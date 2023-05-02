@@ -1,15 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+// import logo from "../assets/images/cooking-chef.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
+
+  const logOutHandler = () => {
+    logOut()
+      .then()
+      .catch((err) => console.log(err));
+  };
   return (
-    <div className="bg-zinc-50">
+    <div className="bg-white">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           <Link to="/" aria-label="ChefRecipe" title="ChefRecipe">
             <span className="ml-2 text-2xl font-bold tracking-wide text-gray-800">
-              Chef<span className="text-purple-500">Recipe</span>
+              {/* <img className="w-20 h-10" src={logo} alt="" /> */}
+              Cooking<span className="text-purple-500">Chef</span>
             </span>
           </Link>
           <ul className="items-center hidden space-x-8 lg:flex font-semibold">
@@ -23,10 +33,27 @@ const Header = () => {
                 Home
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/blogs"
+                aria-label="Blog"
+                title="Blog"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Blog
+              </NavLink>
+            </li>
           </ul>
-          <button className="px-3 py-2 bg-purple-500 font-bold text-white rounded">
-            Start Applying
-          </button>
+          {user && (
+            <Link to="login">
+              <button
+                onClick={logOutHandler}
+                className="px-3 py-2 bg-purple-500 font-bold text-white rounded"
+              >
+                Logout
+              </button>
+            </Link>
+          )}
           {/* -------------- */}
           <div className="lg:hidden">
             <button
@@ -92,6 +119,16 @@ const Header = () => {
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                         >
                           Home
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/blogs"
+                          aria-label="Blogs"
+                          title="Blogs"
+                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        >
+                          Blogs
                         </Link>
                       </li>
                     </ul>
