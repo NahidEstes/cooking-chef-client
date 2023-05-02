@@ -4,7 +4,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
   const [error, setError] = useState("");
-  const { loginUser } = useContext(AuthContext);
+  const { loginUser, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log("login page location", location);
@@ -24,6 +24,15 @@ const Login = () => {
       .catch((error) => {
         setError(error.message);
       });
+  };
+
+  const handleGoogleLogin = () => {
+    console.log("dfdf");
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -129,7 +138,7 @@ const Login = () => {
           <div className="text-center">
             <button
               className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-2 rounded mb-4"
-              // onClick={handleGoogleLogin}
+              onClick={handleGoogleLogin}
             >
               Sign in with Google
             </button>
