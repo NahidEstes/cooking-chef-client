@@ -16,7 +16,7 @@ const ChefRecipe = () => {
   console.log(recipe);
   return (
     <div className="custom-container">
-      <img src={profile_picture} className="w-8/12 rounded" alt="" />
+      <img src={profile_picture} className="lg:w-8/12 rounded" alt="" />
       <div>
         <h2>Name: {name}</h2>
         <p>{details}</p>
@@ -33,7 +33,7 @@ const ChefRecipe = () => {
       </div>
       {/* ------- Recipe Items ------- */}
       <div>
-        <h1 className="text-center text-3xl font-semibold text-slate-800">
+        <h1 className="text-center text-3xl font-semibold text-slate-800 ">
           {name}'s Recipe Items{" "}
         </h1>
 

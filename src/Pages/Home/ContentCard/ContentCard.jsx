@@ -5,7 +5,7 @@ const ContentCard = ({ cData }) => {
   const { id, name, img_url, profile_picture, experience_years, num_recipes } =
     cData;
   return (
-    <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow p-3">
+    <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-lg p-3">
       <a href="/" aria-label="Article">
         <img src={profile_picture} className="rounded w-96 h-64" alt="" />
       </a>

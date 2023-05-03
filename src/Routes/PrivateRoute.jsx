@@ -7,7 +7,15 @@ const PrivateRoute = ({ children }) => {
   const location = useLocation();
 
   if (loading) {
-    return <h1>loading.........</h1>;
+    return (
+      <div className="flex items-center justify-center">
+        <div
+          style={{ borderTopColor: "transparent" }}
+          // style=border-top-color:transparent
+          className="w-10 h-10 border-4 border-blue-400 border-solid rounded-full animate-spin"
+        ></div>
+      </div>
+    );
   }
 
   if (user) {
