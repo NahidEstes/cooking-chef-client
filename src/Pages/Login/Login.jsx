@@ -4,7 +4,8 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
   const [error, setError] = useState("");
-  const { loginUser, signInWithGoogle } = useContext(AuthContext);
+  const { loginUser, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log("login page location", location);
@@ -26,12 +27,20 @@ const Login = () => {
       });
   };
 
+  // Google Login Handler
   const handleGoogleLogin = () => {
     console.log("dfdf");
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
       })
+      .catch((err) => console.log(err));
+  };
+
+  // Github Login Handler
+  const handleGithubLogin = () => {
+    signInWithGithub()
+      .then((result) => console.log(result.user))
       .catch((err) => console.log(err));
   };
 
@@ -148,7 +157,7 @@ const Login = () => {
             {/* -------- Github Sign In ------- */}
             <button
               className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-2 md:ml-3 lg:ml-3 rounded"
-              // onClick={handleGithubLogin}
+              onClick={handleGithubLogin}
             >
               Sign in with GitHub
             </button>

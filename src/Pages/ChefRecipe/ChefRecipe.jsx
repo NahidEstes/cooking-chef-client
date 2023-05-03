@@ -16,9 +16,9 @@ const ChefRecipe = () => {
   console.log(recipe);
   return (
     <div className="custom-container">
-      <img src={profile_picture} className="w-8/12" alt="" />
+      <img src={profile_picture} className="w-8/12 rounded" alt="" />
       <div>
-        <h2>{name}</h2>
+        <h2>Name: {name}</h2>
         <p>{details}</p>
         <p className="mb-2  text-gray-500">
           <span className="font-semibold text-gray-600">Experience:</span>{" "}
