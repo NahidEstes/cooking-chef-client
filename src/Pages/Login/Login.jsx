@@ -118,7 +118,7 @@ const Login = () => {
                 </a>
               </div>
             </div>
-            {/* <p>{error}</p> */}
+            <p>{error}</p>
 
             <div>
               <button
@@ -129,19 +129,23 @@ const Login = () => {
               </button>
             </div>
           </form>
-          {/* ------------ */}
+
           <div className="flex justify-center items-center w-full max-w-sm my-4">
             <hr className="flex-1 border-gray-400" />
             <span className="mx-4 text-gray-500 font-medium">or</span>
             <hr className="flex-1 border-gray-400" />
           </div>
+
           <div className="text-center">
+            {/* ------ Google Sign In ------ */}
             <button
               className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-2 rounded mb-4"
               onClick={handleGoogleLogin}
             >
               Sign in with Google
             </button>
+
+            {/* -------- Github Sign In ------- */}
             <button
               className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-2 md:ml-3 lg:ml-3 rounded"
               // onClick={handleGithubLogin}
@@ -149,7 +153,6 @@ const Login = () => {
               Sign in with GitHub
             </button>
           </div>
-          {/* --------------- */}
         </div>
       </div>
     </div>

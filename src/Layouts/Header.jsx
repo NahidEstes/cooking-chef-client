@@ -19,7 +19,7 @@ const Header = () => {
           <Link to="/" aria-label="ChefRecipe" title="ChefRecipe">
             <span className="ml-2 text-2xl font-bold tracking-wide text-gray-800">
               {/* <img className="w-20 h-10" src={logo} alt="" /> */}
-              Cooking<span className="text-purple-500">Chef</span>
+              Cooking<span className="text-orange-400">Chef</span>
             </span>
           </Link>
           <ul className="items-center hidden space-x-8 lg:flex font-semibold">
@@ -47,16 +47,13 @@ const Header = () => {
           {user ? (
             <button
               onClick={logOutHandler}
-              className="px-3 py-2 bg-purple-500 font-bold text-white rounded"
+              className="px-3 py-2 bg-orange-400 font-bold text-white rounded"
             >
               Logout
             </button>
           ) : (
             <Link to="/login">
-              <button
-                onClick={logOutHandler}
-                className="px-3 py-2 bg-purple-500 font-bold text-white rounded"
-              >
+              <button className="px-3 py-2 bg-orange-400 font-bold text-white rounded">
                 Log In
               </button>
             </Link>

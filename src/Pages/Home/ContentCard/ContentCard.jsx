@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ContentCard = ({ cData }) => {
-  const { id, name, img_url, profile_picture } = cData;
+  const { id, name, img_url, profile_picture, experience_years, num_recipes } =
+    cData;
   return (
     <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow p-3">
       <a href="/" aria-label="Article">
@@ -16,9 +17,15 @@ const ContentCard = ({ cData }) => {
         >
           <p className="text-2xl font-bold leading-5">{name}</p>
         </a>
-        <p className="mb-4 text-gray-700">
-          Sed ut perspiciatis unde omnis iste natus error sit sed quia
-          consequuntur magni voluptatem doloremque.
+        <p className="mb-2  text-gray-500">
+          <span className="font-semibold text-gray-600">Experience:</span>{" "}
+          {experience_years} Years
+        </p>
+        <p className="mb-2  text-gray-500">
+          <span className="font-semibold text-gray-600">
+            Number of Recipe:{" "}
+          </span>
+          {num_recipes}
         </p>
         <div className="flex space-x-4">
           <a
@@ -54,7 +61,7 @@ const ContentCard = ({ cData }) => {
             <p className="font-semibold">7.4K</p>
           </a>
         </div>
-        <div className="my-2">
+        <div className="my-2 text-end">
           <Link to={`/chef-info/${id}`}>
             <button className="bg-orange-400 text-white p-2 rounded font-bold">
               View Recipe
