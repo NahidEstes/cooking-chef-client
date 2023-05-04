@@ -17,7 +17,7 @@ const RecipeItems = ({ recipeItem }) => {
     setIsDisabled(true);
   };
   return (
-    <div className="mt-10 shadow-lg lg:w-8/12 lg:p-4">
+    <div className="mt-10 shadow-lg lg:w-8/12 p-3 lg:p-4">
       <LazyLoadImage
         src={image_url}
         className="rounded image-customize"
