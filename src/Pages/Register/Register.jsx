@@ -12,6 +12,7 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
+    const photoLinkURL = form.photo.value;
     console.log(email, password);
 
     if (password.length < 6) {
@@ -22,6 +23,7 @@ const Register = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         updateUserName(result.user, name);
+        updateProfilePhoto(result.user, photoLinkURL);
         form.reset();
       })
       .catch((error) => console.log(error));
@@ -30,6 +32,12 @@ const Register = () => {
   const updateUserName = (user, name) => {
     updateProfile(user, {
       displayName: name,
+    });
+  };
+
+  const updateProfilePhoto = (user, photoUrl) => {
+    updateProfile(user, {
+      photoURL: photoUrl,
     });
   };
 
@@ -111,7 +119,7 @@ const Register = () => {
               <div className="mt-1">
                 <input
                   id="text"
-                  name="text"
+                  name="photo"
                   type="text"
                   required
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"

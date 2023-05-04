@@ -7,7 +7,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
 
-  console.log(user.displayName);
   const logOutHandler = () => {
     logOut()
       .then()
@@ -47,8 +46,13 @@ const Header = () => {
           </ul>
 
           {user ? (
-            <div>
-              <span>{user.displayName}</span>
+            <div className="flex">
+              <img
+                src={user.photoURL}
+                className="w-10 h-10 rounded-full mr-3"
+                alt=""
+              />
+              {/* <span>{user.displayName}</span> */}
               <button
                 onClick={logOutHandler}
                 className="px-3 py-2 bg-orange-400 font-bold text-white rounded"
