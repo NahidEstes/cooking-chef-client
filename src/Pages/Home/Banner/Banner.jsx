@@ -44,13 +44,9 @@ const Banner = () => {
             >
               Get started
             </Link>
-            <a
-              href="/"
-              aria-label=""
-              className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
-            >
+            <p className="inline-flex items-center font-semibold cursor-pointer text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700">
               Learn more
-            </a>
+            </p>
           </div>
         </div>
       </div>

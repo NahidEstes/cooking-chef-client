@@ -80,7 +80,6 @@ const RecipeItems = ({ recipeItem }) => {
                 : "bg-orange-200 text-white p-2 rounded font-bold"
             }
             disabled={isDisabled}
-            // className={`"bg-orange-500 text-white p-2 rounded font-bold" ${button} ? disabled`}
           >
             Favorite
           </button>

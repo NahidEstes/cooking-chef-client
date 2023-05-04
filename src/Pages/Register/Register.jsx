@@ -128,13 +128,6 @@ const Register = () => {
             </div>
 
             <p className="font-semibold text-red-600">{error}</p>
-            {/* <div>
-              <Link to="/login" className="btn-link">
-                <p className="underline text-blue-600">
-                  Already have an account?
-                </p>
-              </Link>
-            </div> */}
 
             <div className="pt-5">
               <button

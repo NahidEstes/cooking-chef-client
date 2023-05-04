@@ -11,7 +11,6 @@ const Home = () => {
     fetch("https://chef-recipe-server-nahidestes.vercel.app/chef-info")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setChefData(data);
       });
   }, []);

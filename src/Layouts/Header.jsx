@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-// import logo from "../assets/images/cooking-chef.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,7 +27,6 @@ const Header = () => {
         <div className="relative flex items-center justify-between">
           <Link to="/" aria-label="ChefRecipe" title="ChefRecipe">
             <span className="ml-2 text-2xl font-bold tracking-wide text-gray-800">
-              {/* <img className="w-20 h-10" src={logo} alt="" /> */}
               Cooking<span className="text-orange-400">Chef</span>
             </span>
           </Link>
@@ -57,7 +55,7 @@ const Header = () => {
 
           {user ? (
             <div className="flex">
-              <div className="w-32 h-11 cursor-pointer">
+              <div className="lg:w-32 h-11 cursor-pointer">
                 {!isHovering && user.photoURL && (
                   <img
                     src={user?.photoURL}
