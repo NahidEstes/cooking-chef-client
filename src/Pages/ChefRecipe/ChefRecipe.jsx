@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import RecipeItems from "../RecipeItems/RecipeItems";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ChefRecipe = () => {
   const chefData = useLoaderData();
@@ -15,7 +16,11 @@ const ChefRecipe = () => {
   console.log(recipe);
   return (
     <div className="custom-container">
-      <img src={profile_picture} className="lg:w-8/12 rounded" alt="" />
+      <LazyLoadImage
+        src={profile_picture}
+        className="lg:w-8/12 rounded"
+        alt=""
+      />
       <div className="my-4">
         <h2 className="text-4xl font-bold text-gray-700">{name}</h2>
         <p className="my-3 lg:w-8/12">{details}</p>
@@ -66,7 +71,7 @@ const ChefRecipe = () => {
       </div>
       {/* ------- Recipe Items ------- */}
       <div>
-        <h1 className="text-center text-3xl font-semibold text-slate-800 ">
+        <h1 className="text-center text-3xl font-semibold text-slate-800 mt-4">
           {name}'s Recipe Items{" "}
         </h1>
 

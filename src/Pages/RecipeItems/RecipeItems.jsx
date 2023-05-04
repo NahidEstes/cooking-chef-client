@@ -4,12 +4,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const RecipeItems = ({ recipeItem }) => {
   const { name, description, ingredients, instructions, image_url, rating } =
     recipeItem;
-  console.log(rating);
 
   const [isDisabled, setIsDisabled] = useState(false);
   const favoriteButtonHandler = () => {
@@ -18,7 +16,7 @@ const RecipeItems = ({ recipeItem }) => {
   };
   return (
     <div className="mt-10 shadow-lg lg:w-8/12 p-3 lg:p-4">
-      <LazyLoadImage
+      <img
         src={image_url}
         className="rounded image-customize"
         style={{ width: "520px", height: "350px" }}
