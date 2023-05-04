@@ -1,4 +1,5 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 
 const ContentCard = ({ cData }) => {
@@ -7,7 +8,11 @@ const ContentCard = ({ cData }) => {
   return (
     <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-lg p-3">
       <a href="/" aria-label="Article">
-        <img src={profile_picture} className="rounded w-96 h-64" alt="" />
+        <LazyLoadImage
+          src={profile_picture}
+          className="rounded w-96 h-64"
+          alt=""
+        />
       </a>
       <div className="py-5">
         <a

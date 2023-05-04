@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -119,7 +118,7 @@ const Login = () => {
                 </label>
               </div>
             </div>
-            <p>{error}</p>
+            <p className="text-red-500 font-semibold">{error}</p>
 
             <div>
               <button

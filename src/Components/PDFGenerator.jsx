@@ -2,9 +2,9 @@ import React from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 
-const Blogs = () => {
+const PDFGenerator = () => {
   const handleDownloadPDF = () => {
-    const input = document.getElementById("my-blogs");
+    const input = document.getElementById("my-paragraph");
     html2canvas(input).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF();
@@ -14,8 +14,14 @@ const Blogs = () => {
   };
 
   return (
-    <div className="custom-container">
-      <div id="my-blogs">
+    <div>
+      <button
+        onClick={handleDownloadPDF}
+        className="font-bold bg-orange-500 p-3 rounded text-white"
+      >
+        Download PDF
+      </button>
+      <div id="my-paragraph">
         <div className="mt-4 p-3">
           {/* ---------- First Answer ---------- */}
 
@@ -37,14 +43,8 @@ const Blogs = () => {
           </p>
         </div>
       </div>
-      <button
-        onClick={handleDownloadPDF}
-        className="font-bold bg-orange-500 p-3 rounded text-white mt-5"
-      >
-        Download PDF
-      </button>
     </div>
   );
 };
 
-export default Blogs;
+export default PDFGenerator;

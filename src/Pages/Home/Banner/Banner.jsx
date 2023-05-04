@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -26,9 +27,9 @@ const Banner = () => {
           <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
             Tasty Food
             <br className="hidden md:block" />
-            For Your{" "}
+            with Famous{" "}
             <span className="inline-block text-deep-purple-accent-400">
-              Desire
+              Chef
             </span>
           </h2>
           <p className="pr-5 mb-5 text-base text-gray-600 md:text-lg">
@@ -37,12 +38,12 @@ const Banner = () => {
             tasks under the chef's direction.
           </p>
           <div className="flex items-center">
-            <a
-              href="/"
+            <Link
+              to="/"
               className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-slate-800 transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
             >
               Get started
-            </a>
+            </Link>
             <a
               href="/"
               aria-label=""

@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import IngredientsList from "../../Components/IngredientsList";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const RecipeItems = ({ recipeItem }) => {
-  const { name, description, ingredients, instructions, image_url } =
+  const { name, description, ingredients, instructions, image_url, rating } =
     recipeItem;
+  console.log(rating);
 
   const [isDisabled, setIsDisabled] = useState(false);
   const favoriteButtonHandler = () => {
@@ -14,7 +18,7 @@ const RecipeItems = ({ recipeItem }) => {
   };
   return (
     <div className="mt-10 shadow-lg lg:w-8/12 p-4">
-      <img
+      <LazyLoadImage
         src={image_url}
         className="rounded"
         style={{ width: "500px", height: "350px" }}
@@ -61,6 +65,12 @@ const RecipeItems = ({ recipeItem }) => {
           Cooking Method:
         </h1>
         <p className="text-slate-600">{instructions}</p>
+
+        {/* ratings */}
+        <div className="flex gap-3 items-center my-4">
+          <Rating style={{ maxWidth: 180 }} value={rating} readOnly />{" "}
+          <p className="font-bold">{rating}</p>
+        </div>
         <div className="my-2">
           <button
             onClick={favoriteButtonHandler}
