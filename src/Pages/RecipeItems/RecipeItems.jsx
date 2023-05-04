@@ -17,11 +17,11 @@ const RecipeItems = ({ recipeItem }) => {
     setIsDisabled(true);
   };
   return (
-    <div className="mt-10 shadow-lg lg:w-8/12 p-4">
+    <div className="mt-10 shadow-lg lg:w-8/12 lg:p-4">
       <LazyLoadImage
         src={image_url}
-        className="rounded"
-        style={{ width: "500px", height: "350px" }}
+        className="rounded image-customize"
+        style={{ width: "520px", height: "350px" }}
         alt=""
       />
       <h1 className="text-2xl font-bold text-slate-800 my-3">{name}</h1>
