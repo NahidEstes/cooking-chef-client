@@ -7,6 +7,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
 
+  console.log(user.displayName);
   const logOutHandler = () => {
     logOut()
       .then()
@@ -44,13 +45,17 @@ const Header = () => {
               </NavLink>
             </li>
           </ul>
+
           {user ? (
-            <button
-              onClick={logOutHandler}
-              className="px-3 py-2 bg-orange-400 font-bold text-white rounded"
-            >
-              Logout
-            </button>
+            <div>
+              <span>{user.displayName}</span>
+              <button
+                onClick={logOutHandler}
+                className="px-3 py-2 bg-orange-400 font-bold text-white rounded"
+              >
+                Logout
+              </button>
+            </div>
           ) : (
             <Link to="/login">
               <button className="px-3 py-2 bg-orange-400 font-bold text-white rounded">
