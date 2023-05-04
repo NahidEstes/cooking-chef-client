@@ -7,6 +7,16 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
 
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleHover = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
+
   const logOutHandler = () => {
     logOut()
       .then()
@@ -22,7 +32,7 @@ const Header = () => {
               Cooking<span className="text-orange-400">Chef</span>
             </span>
           </Link>
-          <ul className="items-center hidden space-x-8 lg:flex font-semibold">
+          <ul className="items-center hidden space-x-8 lg:flex font-semibold text-lg">
             <li>
               <NavLink
                 to="/"
@@ -47,11 +57,24 @@ const Header = () => {
 
           {user ? (
             <div className="flex">
-              <img
-                src={user.photoURL}
-                className="w-10 h-10 rounded-full mr-3"
-                alt=""
-              />
+              <div className="w-11 h-11 cursor-pointer mr-4">
+                {!isHovering && (
+                  <img
+                    src={user.photoURL}
+                    className="w-11 h-11 rounded-full mr-3 transition-opacity duration-300 ease-in-out"
+                    onMouseEnter={handleHover}
+                    alt=""
+                  />
+                )}
+                {isHovering && (
+                  <p
+                    onMouseLeave={handleMouseLeave}
+                    className="font-semibold capitalize text-lg transition-opacity duration-300 ease-in-out"
+                  >
+                    {user.displayName}
+                  </p>
+                )}
+              </div>
               {/* <span>{user.displayName}</span> */}
               <button
                 onClick={logOutHandler}
