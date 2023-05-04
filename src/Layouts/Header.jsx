@@ -57,11 +57,11 @@ const Header = () => {
 
           {user ? (
             <div className="flex">
-              <div className="w-11 h-11 cursor-pointer mr-4">
-                {!isHovering && (
+              <div className="w-32 h-11 cursor-pointer">
+                {!isHovering && user.photoURL && (
                   <img
-                    src={user.photoURL}
-                    className="w-11 h-11 rounded-full mr-3 transition-opacity duration-300 ease-in-out"
+                    src={user?.photoURL}
+                    className="w-11 h-11 rounded-full border-none mr-3 transition-opacity duration-300 ease-in-out"
                     onMouseEnter={handleHover}
                     alt=""
                   />
@@ -69,7 +69,7 @@ const Header = () => {
                 {isHovering && (
                   <p
                     onMouseLeave={handleMouseLeave}
-                    className="font-semibold capitalize text-lg transition-opacity duration-300 ease-in-out"
+                    className="font-semibold capitalize text-lg transition-opacity duration-300 ease-in-out mt-3"
                   >
                     {user.displayName}
                   </p>

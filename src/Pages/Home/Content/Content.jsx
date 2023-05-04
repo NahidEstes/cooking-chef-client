@@ -85,7 +85,7 @@ const Content = () => {
                     />
                   </svg>
                 </span>
-                Preliminary thinking
+                Deliciously Impressive Dishes
               </li>
             </ul>
             <ul className="space-y-3">
@@ -141,7 +141,7 @@ const Content = () => {
                     />
                   </svg>
                 </span>
-                Satoshi Nakamoto
+                Fall in Love with Food
               </li>
             </ul>
           </div>

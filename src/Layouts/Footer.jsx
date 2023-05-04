@@ -140,8 +140,8 @@ const Footer = () => {
               </button>
             </form>
             <p className="cursor-pointer mt-4 text-sm text-gray-500">
-              Bacon ipsum dolor amet short ribs pig sausage prosciuto chicken
-              spare ribs salami.
+              Mouthwatering Recipes That Will Take Your Taste Buds on a Flavor
+              Adventure
             </p>
           </div>
         </div>
