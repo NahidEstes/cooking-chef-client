@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -29,10 +30,10 @@ const Login = () => {
 
   // Google Login Handler
   const handleGoogleLogin = () => {
-    console.log("dfdf");
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
+        navigate(from, { replace: true });
       })
       .catch((err) => console.log(err));
   };
@@ -40,7 +41,7 @@ const Login = () => {
   // Github Login Handler
   const handleGithubLogin = () => {
     signInWithGithub()
-      .then((result) => console.log(result.user))
+      .then((result) => navigate(from, { replace: true }))
       .catch((err) => console.log(err));
   };
 
@@ -144,10 +145,11 @@ const Login = () => {
             >
               Sign in with Google
             </button>
+            <br />
 
             {/* -------- Github Sign In ------- */}
             <button
-              className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-2 md:ml-3 lg:ml-3 rounded"
+              className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-2 rounded"
               onClick={handleGithubLogin}
             >
               Sign in with GitHub

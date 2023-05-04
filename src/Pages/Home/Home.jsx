@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Banner from "./Banner/Banner";
 import ContentCard from "./ContentCard/ContentCard";
-import Teams from "./Teams/Teams";
 import Step from "./Step/Step";
+import Content from "./Content/Content";
 
 const Home = () => {
   const [chefData, setChefData] = useState([]);
@@ -27,7 +27,7 @@ const Home = () => {
         </div>
       </div>
       <Step />
-      <Teams />
+      <Content />
     </div>
   );
 };

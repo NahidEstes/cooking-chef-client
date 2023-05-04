@@ -40,7 +40,7 @@ const Header = () => {
                 title="Blog"
                 className={({ isActive }) => (isActive ? "active" : "default")}
               >
-                Blog
+                Blogs
               </NavLink>
             </li>
           </ul>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import IngredientsList from "../../Components/IngredientsList";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -6,8 +6,11 @@ import "react-toastify/dist/ReactToastify.css";
 const RecipeItems = ({ recipeItem }) => {
   const { name, description, ingredients, instructions, image_url } =
     recipeItem;
+
+  const [isDisabled, setIsDisabled] = useState(false);
   const favoriteButtonHandler = () => {
     toast("Added to Favorite");
+    setIsDisabled(true);
   };
   return (
     <div className="mt-10 shadow-lg lg:w-8/12 p-4">
@@ -61,7 +64,13 @@ const RecipeItems = ({ recipeItem }) => {
         <div className="my-2">
           <button
             onClick={favoriteButtonHandler}
-            className="bg-orange-500 text-white p-2 rounded font-bold"
+            className={
+              !isDisabled
+                ? "bg-orange-500 text-white p-2 rounded font-bold"
+                : "bg-orange-200 text-white p-2 rounded font-bold"
+            }
+            disabled={isDisabled}
+            // className={`"bg-orange-500 text-white p-2 rounded font-bold" ${button} ? disabled`}
           >
             Favorite
           </button>
