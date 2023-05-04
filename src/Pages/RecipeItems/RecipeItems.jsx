@@ -1,15 +1,20 @@
 import React from "react";
 import IngredientsList from "../../Components/IngredientsList";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const RecipeItems = ({ recipeItem }) => {
   const { name, description, ingredients, instructions, image_url } =
     recipeItem;
+  const favoriteButtonHandler = () => {
+    toast("Added to Favorite");
+  };
   return (
-    <div className="mt-10 shadow lg:w-8/12 p-3">
+    <div className="mt-10 shadow-lg lg:w-8/12 p-4">
       <img
         src={image_url}
         className="rounded"
-        style={{ width: "450px", height: "350px" }}
+        style={{ width: "500px", height: "350px" }}
         alt=""
       />
       <h1 className="text-2xl font-bold text-slate-800 my-3">{name}</h1>
@@ -53,7 +58,16 @@ const RecipeItems = ({ recipeItem }) => {
           Cooking Method:
         </h1>
         <p className="text-slate-600">{instructions}</p>
+        <div className="my-2">
+          <button
+            onClick={favoriteButtonHandler}
+            className="bg-orange-500 text-white p-2 rounded font-bold"
+          >
+            Favorite
+          </button>
+        </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

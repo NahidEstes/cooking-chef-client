@@ -4,7 +4,6 @@ import RecipeItems from "../RecipeItems/RecipeItems";
 
 const ChefRecipe = () => {
   const chefData = useLoaderData();
-  console.log(chefData);
   const {
     name,
     profile_picture,
@@ -17,9 +16,9 @@ const ChefRecipe = () => {
   return (
     <div className="custom-container">
       <img src={profile_picture} className="lg:w-8/12 rounded" alt="" />
-      <div>
-        <h2>Name: {name}</h2>
-        <p>{details}</p>
+      <div className="my-4">
+        <h2 className="text-4xl font-bold text-gray-700">{name}</h2>
+        <p className="my-3 lg:w-8/12">{details}</p>
         <p className="mb-2  text-gray-500">
           <span className="font-semibold text-gray-600">Experience:</span>{" "}
           {experience_years} Years

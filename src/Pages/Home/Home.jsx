@@ -16,7 +16,6 @@ const Home = () => {
       });
   }, []);
 
-  console.log(chefData);
   return (
     <div>
       <Banner />
