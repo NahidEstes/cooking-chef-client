@@ -13,7 +13,6 @@ const ChefRecipe = () => {
     num_recipes,
     recipe,
   } = chefData;
-  console.log(recipe);
   return (
     <div className="custom-container">
       <LazyLoadImage
