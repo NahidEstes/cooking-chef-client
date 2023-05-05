@@ -13,8 +13,8 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => {
         setChefData(data);
+        setLoading(false);
       });
-    setLoading(false);
   }, []);
 
   return (

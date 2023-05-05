@@ -1,11 +1,15 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { user, createUser } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+
   const handleSubmitButton = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -25,6 +29,7 @@ const Register = () => {
         updateUserName(result.user, name);
         updateProfilePhoto(result.user, photoLinkURL);
         form.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => console.log(error));
   };

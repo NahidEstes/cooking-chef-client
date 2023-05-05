@@ -7,21 +7,18 @@ const ContentCard = ({ cData }) => {
     cData;
   return (
     <div className="overflow-hidden transition-shadow duration-300 bg-white rounded shadow-lg p-3">
-      <a href="/" aria-label="Article">
-        <LazyLoadImage
-          src={profile_picture}
-          className="rounded w-96 h-64"
-          alt=""
-        />
-      </a>
+      <LazyLoadImage
+        src={profile_picture}
+        className="rounded w-96 h-64"
+        alt=""
+      />
       <div className="py-5">
-        <a
-          href="/"
+        <p
           aria-label="Article"
           className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-purple-accent-700"
         >
           <p className="text-2xl font-bold leading-5">{name}</p>
-        </a>
+        </p>
         <p className="mb-2  text-gray-500">
           <span className="font-semibold text-gray-600">Experience:</span>{" "}
           {experience_years} Years
@@ -33,10 +30,9 @@ const ContentCard = ({ cData }) => {
           {num_recipes}
         </p>
         <div className="flex space-x-4">
-          <a
-            href="/"
+          <p
             aria-label="Likes"
-            className="flex items-start text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700 group"
+            className="flex items-start text-gray-800 transition-colors duration-200 cursor-pointer hover:text-deep-purple-accent-700 group"
           >
             <div className="mr-2">
               <svg
@@ -64,7 +60,7 @@ const ContentCard = ({ cData }) => {
               </svg>
             </div>
             <p className="font-semibold">7.4K</p>
-          </a>
+          </p>
         </div>
         <div className="my-2 text-end">
           <Link to={`/chef-info/${id}`}>

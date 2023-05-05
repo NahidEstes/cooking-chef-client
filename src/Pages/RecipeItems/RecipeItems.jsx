@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./RecipeItems.css";
 import IngredientsList from "../../Components/IngredientsList";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -16,12 +17,7 @@ const RecipeItems = ({ recipeItem }) => {
   };
   return (
     <div className="mt-10 shadow-xl lg:w-8/12 p-3 lg:p-5">
-      <img
-        src={image_url}
-        className="rounded image-customize"
-        style={{ width: "520px", height: "350px" }}
-        alt=""
-      />
+      <img src={image_url} className="rounded image-customize" alt="" />
       <h1 className="text-2xl font-bold text-slate-800 my-3">{name}</h1>
       <p className="lg:w-7/12">{description}</p>
       <div className="my-5">
